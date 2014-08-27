@@ -1,0 +1,49 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+	z-index:-10;
+}
+
+.carousel-inner {
+	border: 5px solid #333;
+	border-radius: 50px;
+	-moz-box-shadow: inset 0 0 5px px #888;
+	-webkit-box-shadow: inset 0 0 5px 3px#888;
+	box-shadow: inset 0 0 5px 3px #888;
+	height: 100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.carousel-control.left {
+    -webkit-border-top-left-radius: 50px;
+    -webkit-border-bottom-left-radius: 50px;
+    -moz-border-radius-topleft: 50px;
+    -moz-border-radius-bottomleft: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.carousel-control.right {
+    -webkit-border-top-right-radius: 50px;
+    -webkit-border-bottom-right-radius: 50px;
+    -moz-border-radius-topright: 50px;
+    -moz-border-radius-bottomright: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
