@@ -3,6 +3,7 @@
 #mySweetCarousel {
 	overflow:hidden;
 	width:256px;
+	margin:0px auto;
 }
 
 #mySweetCarousel ul {
@@ -16,12 +17,36 @@
 
 #carousel-nav {
 	margin: 0 auto;
-	width: 120px;
+	width: 75px;
 }
 
 #carousel-nav button {
-	padding:1em;
-	margin-right:1em;
-	border-radius:10px;
 	cursor:pointer;
+}
+
+p.caption {
+	/* Impact-based sans serif stack */
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+	text-align:center;
+}
+
+button {
+  background-color: #a90329;
+  background-image: linear-gradient(to bottom, #a90329, #6d0019);
+  border: 1px solid #77021d;
+  border-radius: 20px;
+  box-shadow: 0 0 1px #ffffff inset;
+  color: #ffffff;
+  display: inline-block;
+  font-family: arial,helvetica,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 7px 10px;
+  text-decoration: none;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+	background-image: linear-gradient(to bottom, #6d0019, #90329);
+	border:1px solid #000;
 }
