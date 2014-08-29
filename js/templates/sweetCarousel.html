@@ -1,28 +1,13 @@
-<div id="sweetCarousel" class="carousel slide">
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		{{#each slides}}
-		<li data-target="#sweetCarousel" data-slide-to=""></li>
-		{{/each}}
-	</ol>
-	<!-- Wrapper for Carousel -->
-    <div class="carousel-inner">
-    	{{#each slides}}
-        <div class="item">
-            <div class="fill" style="background-image:url('{{image}}');">
-	            <div class="carousel-caption">
-	                <p>{{caption}}</p>
-	            </div>
-	        </div>
-        </div>
-        {{/each}}
-    </div>
-	<!-- Controls -->
-	<a class="left carousel-control" href="#sweetCarousel" role="button" data-slide="prev">
-	    <span class="icon-prev"></span>
-	</a>
-	<a class="right carousel-control" href="#sweetCarousel" role="button" data-slide="next">
-	    <span class="icon-next"></span>
-	</a>
+<!-- Wrapper for Carousel -->
+<ul class="sweetCarousel">
+	{{#each slides}}
+    <li>
+        <img src='{{image}}' />
+    </li>
+    {{/each}}
+</ul>
 
+<div id="carousel-nav">
+	<button class="depth" type="button" data-dir="prev"><</button>
+	<button class="depth" type="button" data-dir="next">></button>
 </div>

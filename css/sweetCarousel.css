@@ -1,0 +1,27 @@
+* {margin:0px;padding:0px;}
+
+#mySweetCarousel {
+	overflow:hidden;
+	width:256px;
+}
+
+#mySweetCarousel ul {
+	width: 10000px;
+	list-style:none;
+}
+
+.sweetCarousel li {
+	float:left;
+}
+
+#carousel-nav {
+	margin: 0 auto;
+	width: 120px;
+}
+
+#carousel-nav button {
+	padding:1em;
+	margin-right:1em;
+	border-radius:10px;
+	cursor:pointer;
+}
