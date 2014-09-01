@@ -4,6 +4,7 @@
 	position:relative;
 	display:none;
 	overflow:hidden;
+	margin:0px auto;
 }
 .sweetCarousel figure {
 	position:absolute;

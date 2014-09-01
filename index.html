@@ -9,40 +9,42 @@
 	<div id="mySweetCarousel">
 	</div>
 
-	<script src="/js/jquery-1.11.0.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
 	
-	<script src="/js/jQuery.sweetCarousel.min.js" type="text/javascript"></script>
+	<script src="js/jquery.sweetCarousel.min.js" type="text/javascript"></script>
 	
 	<script>
-		$('#mySweetCarousel').sweetCarousel({
-			// slides: [
-	  //           {
-	  //               caption: "Fill Murray",
-	  //               image: 'http://fillmurray.com/600/200'
-	  //           },
-	  //           {
-	  //               caption: "Nice Nice JPG",
-	  //               image: 'http://nicenicejpg.com/600/200'
-	  //           },
-	  //           {
-	  //               caption: "Place Cage Calm",
-	  //               image: 'http://www.placecage.com/600/200'
-	  //           },
-	  //           {
-	  //               caption: "Place Cage Gray",
-	  //               image: 'http://www.placecage.com/g/600/200'
-	  //           },
-	  //           {
-	  //               caption: "Place Cage Crazy",
-	  //               image: 'http://www.placecage.com/c/600/200'
-	  //           },
-	  //           {
-	  //               caption: "Place Sheen",
-	  //               image: 'http://placesheen.com/600/200'
-	  //           }
-   //          ],
-   //          width:600,
-   //          border:'yes'
+		$(document).ready(function(){	
+			$('#mySweetCarousel').sweetCarousel({
+				slides: [
+		            {
+		                caption: "Fill Murray",
+		                image: 'http://fillmurray.com/600/200'
+		            },
+		            {
+		                caption: "Nice Nice JPG",
+		                image: 'http://nicenicejpg.com/600/200'
+		            },
+		            {
+		                caption: "Place Cage Calm",
+		                image: 'http://www.placecage.com/600/200'
+		            },
+		            {
+		                caption: "Place Cage Gray",
+		                image: 'http://www.placecage.com/g/600/200'
+		            },
+		            {
+		                caption: "Place Cage Crazy",
+		                image: 'http://www.placecage.com/c/600/200'
+		            },
+		            {
+		                caption: "Place Sheen",
+		                image: 'http://placesheen.com/600/200'
+		            }
+	            ],
+	            width:600,
+	            border:'yes'
+			});
 		});
 	</script>
 

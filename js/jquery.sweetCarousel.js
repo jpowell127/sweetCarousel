@@ -6,7 +6,7 @@
         // Override defaults with passed in options
         var opts = $.extend( {}, $.fn.sweetCarousel.defaults, options );
         // Append Stylesheet to head
-        $("head").append("<link rel='stylesheet' href='/css/sweetCarousel.css'>");
+        $("head").append("<link rel='stylesheet' href='css/sweetCarousel.css'>");
         // Pass Options to Template
         getAndBindTemplate(opts, div);
     };
@@ -52,7 +52,8 @@
                 // Bind Data to template
                 var template = Handlebars.compile(result);
                 $(div).html(template(data));
-            }
+            },
+            dataType: "text"
         }).done(function() {
             initCarousel(data);
 		});
