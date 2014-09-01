@@ -13,7 +13,7 @@ Include the latest version of jquery and jquery.sweetCarousel.min.js just before
 
 ## How to Use
 
-Create a div in your HTML document with any ID you would like to use (#example used for demonstartion only) and then pass that div to .sweetCarousel() as shown below.
+Create a div in your HTML document with any ID you would like to use (#example used for demonstration only) and then pass that div to .sweetCarousel() as shown below. Sweet Carousel takes care of the rest.
 
 ## Syntax Example
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 ## Custom Parameters
 
-Sweet carousel comes with a defualt set of images served up via Amazon CloudFront along with a default set of captions but you can provide your own by passing in an array of slides as shown below. Make sure all your images are the exact same size and don't forget to pass in the width of your images. You can also pass in an option to include a border as shown below.
+Sweet carousel comes with a defualt set of images served up via Amazon CloudFront along with a default set of captions but you can provide your own by passing in an array of slides as shown below. Make sure all of your images are the exact same size and don't forget to pass in the width of your images. You can also pass in an option to include a border as shown below. Sweet Carousel takes care of the rest. How sweet is that?
 
 ```javascript
 $(document).ready(function(){
