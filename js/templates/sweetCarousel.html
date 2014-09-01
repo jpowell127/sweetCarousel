@@ -1,14 +1,11 @@
-<!-- Wrapper for Carousel -->
-<ul class="sweetCarousel">
+<div class="sweetCarousel">
 	{{#each slides}}
-    <li>
-        <img src='{{image}}' />
-        <p class="caption">{{caption}}</p>
-    </li>
+    <figure>
+        <img src='{{image}}' alt="{{caption}}" width="100%"/>
+        <figcaption>{{caption}}</figcaption>
+    </figure>
     {{/each}}
-</ul>
 
-<div id="carousel-nav">
-	<button class="depth" type="button" data-dir="prev"><</button>
-	<button class="depth" type="button" data-dir="next">></button>
+	<span class="prev">&#9668;</span>
+	<span class="next">&#9658;</span>
 </div>

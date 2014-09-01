@@ -1,74 +1,17 @@
 (function($) {
-    // Ajax request to load, compile, and append Handlebars template to the DOM
-    function getTemplateAjax(path,data,div) {
-        var template;
-
-        $.ajax({
-            url: path,
-            cache: true,
-            success: function(result) {
-                template  = Handlebars.compile(result);
-                $(div).html(template(data));
-            }
-        }).done(function( msg ) {
-
-			var carouselUL = $(div).children('ul'),
-				imgs = carouselUL.find('img'),
-				imgWidth = 256,
-				imgsLen = imgs.length,
-				current = 1,
-				totalImgsWidth = imgsLen * imgWidth;
-
-				console.log(imgWidth)
-
-			$('#carousel-nav').find('button').on('click', function() {
-				var direction = $(this).data('dir'),
-					loc = imgWidth;
-
-				( direction === 'next' ) ? ++current : --current;
-
-				if ( current === 0 ) {
-					current = imgsLen;
-					loc = imgWidth - totalImgsWidth;
-					direction === 'next';
-				} else if ( current - 1 === imgsLen ) {
-					current = 1;
-					loc = 0;
-				}
-
-				transition(carouselUL, loc, direction);
-			});
-
-			function transition( container, loc, direction ) {
-				var unit;
-
-				if ( direction && loc !== 0 ) {
-					unit = ( direction === 'next' ) ? '-=' : '+=';
-				}
-
-				container.animate({
-					'margin-left': unit ? (unit + loc) : loc
-				});
-			} 			
-		});       
-    }
-
-    // Append Stylesheet to head
-    function appendStylesheet() {
-        $("head").append("<link rel='stylesheet' href='/css/sweetCarousel.css'>");
-    }
 
     // Putting our plugin in the sweetCarousel Namespace
     $.fn.sweetCarousel = function( options ) {
-    	var div = this;
-    	// override defaults with passed in options
+        var div = this;
+        // Override defaults with passed in options
         var opts = $.extend( {}, $.fn.sweetCarousel.defaults, options );
-
-        appendStylesheet();
-        getTemplateAjax('js/templates/sweetCarousel.html', opts, div);
+        // Append Stylesheet to head
+        $("head").append("<link rel='stylesheet' href='/css/sweetCarousel.css'>");
+        // Pass Options to Template
+        getAndBindTemplate(opts, div);
     };
 
-    // create some defaults
+    // Create some defaults for carousel
     $.fn.sweetCarousel.defaults = {
          slides: [
             {
@@ -95,7 +38,68 @@
                 caption: "Chocolate Cake 6",
                 image: 'http://dzmgxxm1t5tb7.cloudfront.net/chocolate_cake_06.png'
             }
-        ]
+        ],
+        width:256,
+        border:'no'
     };
 
-}(jQuery));	
+    // Ajax request to load, bind, and append Handlebars template
+    function getAndBindTemplate(data,div) {
+        $.ajax({
+            url: 'js/templates/sweetCarousel.html',
+            cache: true,
+            success: function(result) {
+                // Bind Data to template
+                var template = Handlebars.compile(result);
+                $(div).html(template(data));
+            }
+        }).done(function() {
+            initCarousel(data);
+		});
+    }
+
+    // Initialize carousel
+    function initCarousel(data) {
+        // Add max-width to carousel and fade in
+        $('.sweetCarousel').css('max-width', data.width).delay(500).fadeIn();
+        
+        // Add Border if option passed in
+        if(data.border === 'yes'){
+            $('.sweetCarousel').css({
+                'border':'5px solid #FFF',
+                '-webkit-box-shadow':'1px 1px 3px 2px rgba(50, 50, 50, 0.45)',
+                '-moz-box-shadow':'1px 1px 3px 2px rgba(50, 50, 50, 0.45)',
+                'box-shadow':'1px 1px 3px 2px rgba(50, 50, 50, 0.45)',
+                'border-radius':'3px',
+                'margin':'5px'
+            });
+        }
+
+        // Keep track of current slide
+        var counter = 0,
+            // Collection of all of the slides
+            $items = $('.sweetCarousel figure'),
+            // Total number of slides
+            numItems = $items.length;
+            // Show first slide
+            $items.first().addClass('show');
+
+        // Cycles the slides
+        var showCurrent = function() {
+            var itemToShow = Math.abs(counter%numItems);
+            $items.removeClass('show');
+            $items.eq(itemToShow).addClass('show');
+        };
+
+        // Add click events to prev & next buttons 
+        $('.sweetCarousel .next').on('click', function() {
+            counter++;
+            showCurrent();
+        });
+        $('.sweetCarousel .prev').on('click', function() {
+            counter--;
+            showCurrent();
+        });
+    }
+
+}(jQuery));
