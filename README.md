@@ -4,7 +4,7 @@ Sweet Carousel is a free jQuery plugin that lets you create beautiful responsive
 
 ## Installation
 
-Include the latest version of jquery and jquery.sweetCarousel.min.js just before the closing body tag in your HTML document:
+Include the latest version of jquery and jquery.sweetCarousel.min.js just before the closing body tag in your HTML document and add the included templates folder to your js folder:
 
 ```html
 <script src="js/jquery.min.js"></script>  
